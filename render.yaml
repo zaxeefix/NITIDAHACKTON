@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: triage247ng-api
+    runtime: node
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/readiness
+    envVars:
+      - key: NODE_VERSION
+        value: 22.13.0
+      - key: TRIAGENG_ENVIRONMENT
+        value: production
+      - key: TRIAGENG_LOCAL_DEV
+        value: "false"
+# Permanent incident/evidence data must use a managed database and durable object storage.
+# This blueprint is a review template. Do not deploy it until the D1/R2 adapter is replaced
+# with approved managed SQL and durable object-storage providers.

@@ -1,0 +1,30 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "TriageNG-0.2.0-SBOM",
+  "documentNamespace": "https://triageng.local/spdx/0.2.0/2026-08-25",
+  "creationInfo": {
+    "created": "2026-08-25T22:24:14Z",
+    "creators": ["Tool: npm-11.12.1", "Organization: TriageNG Project"]
+  },
+  "packages": [
+    {"name":"TriageNG","SPDXID":"SPDXRef-Package-TriageNG","versionInfo":"0.2.0","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"NOASSERTION"},
+    {"name":"drizzle-orm","SPDXID":"SPDXRef-drizzle-orm","versionInfo":"0.45.2","downloadLocation":"https://registry.npmjs.org/drizzle-orm/-/drizzle-orm-0.45.2.tgz","filesAnalyzed":false,"licenseConcluded":"Apache-2.0"},
+    {"name":"next","SPDXID":"SPDXRef-next","versionInfo":"16.2.6","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT"},
+    {"name":"pdfjs-dist","SPDXID":"SPDXRef-pdfjs-dist","versionInfo":"5.7.284","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"Apache-2.0"},
+    {"name":"react","SPDXID":"SPDXRef-react","versionInfo":"19.2.6","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT"},
+    {"name":"react-dom","SPDXID":"SPDXRef-react-dom","versionInfo":"19.2.6","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"MIT"},
+    {"name":"tesseract.js","SPDXID":"SPDXRef-tesseract-js","versionInfo":"6.0.1","downloadLocation":"NOASSERTION","filesAnalyzed":false,"licenseConcluded":"Apache-2.0"}
+  ],
+  "relationships": [
+    {"spdxElementId":"SPDXRef-DOCUMENT","relationshipType":"DESCRIBES","relatedSpdxElement":"SPDXRef-Package-TriageNG"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-drizzle-orm"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-next"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-pdfjs-dist"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-react"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-react-dom"},
+    {"spdxElementId":"SPDXRef-Package-TriageNG","relationshipType":"DEPENDS_ON","relatedSpdxElement":"SPDXRef-tesseract-js"}
+  ],
+  "annotations": [{"annotationDate":"2026-08-25T22:24:14Z","annotationType":"OTHER","annotator":"Organization: TriageNG Project","comment":"Direct production dependencies. The authoritative full transitive inventory is package-lock.json and npm CycloneDX output generated during release."}]
+}

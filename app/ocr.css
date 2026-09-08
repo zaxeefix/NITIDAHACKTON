@@ -1,0 +1,17 @@
+.ocrEvidence {
+  display: grid;
+  gap: 0;
+  margin-top: 8px;
+}
+
+.ocrReview {
+  border: 1px solid var(--border);
+  border-top: 0;
+  background: #f8fbfd;
+  padding: 12px;
+  border-radius: 0 0 5px 5px;
+}
+
+.ocrReview .sectionLabel { margin-bottom: 7px; }
+.ocrReview p { white-space: pre-wrap; font-size: 10px; line-height: 1.55; margin: 0 0 7px; }
+.ocrReview small { color: var(--muted); font-size: 9px; }

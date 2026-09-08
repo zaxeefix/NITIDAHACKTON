@@ -1,0 +1,415 @@
+{
+  "schemaVersion": "1.0",
+  "generatedAt": "2026-08-24T17:13:05.633997+00:00",
+  "method": {
+    "engine": "Tesseract 5 CLI",
+    "synthetic": true,
+    "seed": 2026,
+    "cases": 20,
+    "languages": [
+      "English",
+      "Pidgin"
+    ],
+    "difficulties": [
+      "easy",
+      "blur",
+      "rotate",
+      "compressed"
+    ]
+  },
+  "overall": {
+    "characterAccuracy": 0.996,
+    "wordAccuracy": 0.969,
+    "privacyRecallAfterOcr": 1.0,
+    "privacyExpected": 10,
+    "privacyDetected": 10
+  },
+  "byLanguage": {
+    "English": {
+      "cases": 10,
+      "characterAccuracy": 0.998,
+      "wordAccuracy": 0.983
+    },
+    "Pidgin": {
+      "cases": 10,
+      "characterAccuracy": 0.994,
+      "wordAccuracy": 0.957
+    }
+  },
+  "byDifficulty": {
+    "easy": {
+      "cases": 8,
+      "characterAccuracy": 0.998,
+      "wordAccuracy": 0.982
+    },
+    "blur": {
+      "cases": 4,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0
+    },
+    "rotate": {
+      "cases": 4,
+      "characterAccuracy": 0.986,
+      "wordAccuracy": 0.87
+    },
+    "compressed": {
+      "cases": 4,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0
+    }
+  },
+  "cases": [
+    {
+      "id": "OCR-001",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Unexpected OTP received twice. Call 08031234567.",
+      "ocrText": "Unexpected OTP received twice. Call 08031234567.",
+      "characterErrors": 0,
+      "referenceCharacters": 48,
+      "wordErrors": 0,
+      "referenceWords": 6,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-002",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Phishing link: https://payroll-verify.example.test/login",
+      "ocrText": "Phishing link: https://payroll-verify.example.test/login",
+      "characterErrors": 0,
+      "referenceCharacters": 56,
+      "wordErrors": 0,
+      "referenceWords": 3,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-003",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Email security@example.test about the ransomware note.",
+      "ocrText": "Email security@example.test about the ransomware note.",
+      "characterErrors": 0,
+      "referenceCharacters": 54,
+      "wordErrors": 0,
+      "referenceWords": 6,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-004",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Unknown login from 197.210.24.18 on the student portal.",
+      "ocrText": "Unknown login from 197.210.24.18 on the student portal.",
+      "characterErrors": 0,
+      "referenceCharacters": 55,
+      "wordErrors": 0,
+      "referenceWords": 8,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-005",
+      "language": "English",
+      "difficulty": "blur",
+      "groundTruth": "Payroll asked for my password twice. Phone 08035550111.",
+      "ocrText": "Payroll asked for my password twice. Phone 08035550111.",
+      "characterErrors": 0,
+      "referenceCharacters": 55,
+      "wordErrors": 0,
+      "referenceWords": 8,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-006",
+      "language": "English",
+      "difficulty": "blur",
+      "groundTruth": "Suspicious domain scholarship-check.example.test was shared.",
+      "ocrText": "Suspicious domain scholarship-check.example.test was shared.",
+      "characterErrors": 0,
+      "referenceCharacters": 60,
+      "wordErrors": 0,
+      "referenceWords": 5,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-007",
+      "language": "English",
+      "difficulty": "rotate",
+      "groundTruth": "Contact analyst@example.test; files now end with .locked.",
+      "ocrText": "Contact analyst@example.test, files now end with .locked.",
+      "characterErrors": 1,
+      "referenceCharacters": 57,
+      "wordErrors": 1,
+      "referenceWords": 7,
+      "characterAccuracy": 0.982,
+      "wordAccuracy": 0.857,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-008",
+      "language": "English",
+      "difficulty": "rotate",
+      "groundTruth": "Malware hash d41d8cd98f00b204e9800998ecf8427e detected.",
+      "ocrText": "Malware hash d41d8cd98f00b204e9800998ecf8427e detected.",
+      "characterErrors": 0,
+      "referenceCharacters": 55,
+      "wordErrors": 0,
+      "referenceWords": 4,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-009",
+      "language": "English",
+      "difficulty": "compressed",
+      "groundTruth": "Lost laptop reported by staff@example.test today.",
+      "ocrText": "Lost laptop reported by staff@example.test today.",
+      "characterErrors": 0,
+      "referenceCharacters": 49,
+      "wordErrors": 0,
+      "referenceWords": 6,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-010",
+      "language": "English",
+      "difficulty": "compressed",
+      "groundTruth": "Admin login from 102.89.34.7 was not authorised.",
+      "ocrText": "Admin login from 102.89.34.7 was not authorised.",
+      "characterErrors": 0,
+      "referenceCharacters": 48,
+      "wordErrors": 0,
+      "referenceWords": 7,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-011",
+      "language": "Pidgin",
+      "difficulty": "easy",
+      "groundTruth": "OTP wey I no request enter my phone 08031234567 twice.",
+      "ocrText": "OTP wey | no request enter my phone 08031234567 twice.",
+      "characterErrors": 1,
+      "referenceCharacters": 54,
+      "wordErrors": 1,
+      "referenceWords": 10,
+      "characterAccuracy": 0.981,
+      "wordAccuracy": 0.9,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-012",
+      "language": "Pidgin",
+      "difficulty": "easy",
+      "groundTruth": "This link https://school-fee.example.test no look correct.",
+      "ocrText": "This link https://school-fee.example.test no look correct.",
+      "characterErrors": 0,
+      "referenceCharacters": 58,
+      "wordErrors": 0,
+      "referenceWords": 6,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-013",
+      "language": "Pidgin",
+      "difficulty": "easy",
+      "groundTruth": "Abeg email ictdesk@example.test, my files no dey open.",
+      "ocrText": "Abeg email ictdesk@example.test, my files no dey open.",
+      "characterErrors": 0,
+      "referenceCharacters": 54,
+      "wordErrors": 0,
+      "referenceWords": 8,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-014",
+      "language": "Pidgin",
+      "difficulty": "easy",
+      "groundTruth": "Login from 197.210.24.18 no be me do am.",
+      "ocrText": "Login from 197.210.24.18 no be me do am.",
+      "characterErrors": 0,
+      "referenceCharacters": 40,
+      "wordErrors": 0,
+      "referenceWords": 8,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-015",
+      "language": "Pidgin",
+      "difficulty": "blur",
+      "groundTruth": "Payroll dey ask for password again. Call 08035550111.",
+      "ocrText": "Payroll dey ask for password again. Call 08035550111.",
+      "characterErrors": 0,
+      "referenceCharacters": 53,
+      "wordErrors": 0,
+      "referenceWords": 8,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-016",
+      "language": "Pidgin",
+      "difficulty": "blur",
+      "groundTruth": "Scholarship-check.example.test dey collect student login.",
+      "ocrText": "Scholarship-check.example.test dey collect student login.",
+      "characterErrors": 0,
+      "referenceCharacters": 57,
+      "wordErrors": 0,
+      "referenceWords": 5,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-017",
+      "language": "Pidgin",
+      "difficulty": "rotate",
+      "groundTruth": "Send message to analyst@example.test; computer don lock.",
+      "ocrText": "Send message to analyst@example.test; computer don lock.",
+      "characterErrors": 0,
+      "referenceCharacters": 56,
+      "wordErrors": 0,
+      "referenceWords": 7,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-018",
+      "language": "Pidgin",
+      "difficulty": "rotate",
+      "groundTruth": "I see d41d8cd98f00b204e9800998ecf8427e for alert.",
+      "ocrText": "lsee d41d8cd98f00b204e9800998ecf8427e for alert.",
+      "characterErrors": 2,
+      "referenceCharacters": 49,
+      "wordErrors": 2,
+      "referenceWords": 5,
+      "characterAccuracy": 0.959,
+      "wordAccuracy": 0.6,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    },
+    {
+      "id": "OCR-019",
+      "language": "Pidgin",
+      "difficulty": "compressed",
+      "groundTruth": "Staff@example.test laptop loss for motor park.",
+      "ocrText": "Staff@example.test laptop loss for motor park.",
+      "characterErrors": 0,
+      "referenceCharacters": 46,
+      "wordErrors": 0,
+      "referenceWords": 6,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 1,
+      "privacyDetected": 1
+    },
+    {
+      "id": "OCR-020",
+      "language": "Pidgin",
+      "difficulty": "compressed",
+      "groundTruth": "Na 102.89.34.7 enter admin account for midnight.",
+      "ocrText": "Na 102.89.34.7 enter admin account for midnight.",
+      "characterErrors": 0,
+      "referenceCharacters": 48,
+      "wordErrors": 0,
+      "referenceWords": 7,
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0,
+      "privacyExpected": 0,
+      "privacyDetected": 0
+    }
+  ],
+  "failures": [
+    {
+      "id": "OCR-018",
+      "language": "Pidgin",
+      "difficulty": "rotate",
+      "groundTruth": "I see d41d8cd98f00b204e9800998ecf8427e for alert.",
+      "ocrText": "lsee d41d8cd98f00b204e9800998ecf8427e for alert.",
+      "characterAccuracy": 0.959,
+      "wordAccuracy": 0.6
+    },
+    {
+      "id": "OCR-007",
+      "language": "English",
+      "difficulty": "rotate",
+      "groundTruth": "Contact analyst@example.test; files now end with .locked.",
+      "ocrText": "Contact analyst@example.test, files now end with .locked.",
+      "characterAccuracy": 0.982,
+      "wordAccuracy": 0.857
+    },
+    {
+      "id": "OCR-011",
+      "language": "Pidgin",
+      "difficulty": "easy",
+      "groundTruth": "OTP wey I no request enter my phone 08031234567 twice.",
+      "ocrText": "OTP wey | no request enter my phone 08031234567 twice.",
+      "characterAccuracy": 0.981,
+      "wordAccuracy": 0.9
+    },
+    {
+      "id": "OCR-001",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Unexpected OTP received twice. Call 08031234567.",
+      "ocrText": "Unexpected OTP received twice. Call 08031234567.",
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0
+    },
+    {
+      "id": "OCR-002",
+      "language": "English",
+      "difficulty": "easy",
+      "groundTruth": "Phishing link: https://payroll-verify.example.test/login",
+      "ocrText": "Phishing link: https://payroll-verify.example.test/login",
+      "characterAccuracy": 1.0,
+      "wordAccuracy": 1.0
+    }
+  ],
+  "limitations": [
+    "Synthetic rendered images are not representative of every phone camera, handwriting or damaged document.",
+    "The benchmark uses the English Tesseract language pack; Nigerian Pidgin spelling variation remains a review risk.",
+    "Privacy recall is measured only for synthetic email addresses and Nigerian phone numbers after OCR."
+  ]
+}

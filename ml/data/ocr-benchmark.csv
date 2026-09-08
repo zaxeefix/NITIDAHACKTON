@@ -1,0 +1,21 @@
+id,language,difficulty,groundTruth,ocrText,characterErrors,referenceCharacters,wordErrors,referenceWords,characterAccuracy,wordAccuracy,privacyExpected,privacyDetected
+OCR-001,English,easy,Unexpected OTP received twice. Call 08031234567.,Unexpected OTP received twice. Call 08031234567.,0,48,0,6,1.0,1.0,1,1
+OCR-002,English,easy,Phishing link: https://payroll-verify.example.test/login,Phishing link: https://payroll-verify.example.test/login,0,56,0,3,1.0,1.0,0,0
+OCR-003,English,easy,Email security@example.test about the ransomware note.,Email security@example.test about the ransomware note.,0,54,0,6,1.0,1.0,1,1
+OCR-004,English,easy,Unknown login from 197.210.24.18 on the student portal.,Unknown login from 197.210.24.18 on the student portal.,0,55,0,8,1.0,1.0,0,0
+OCR-005,English,blur,Payroll asked for my password twice. Phone 08035550111.,Payroll asked for my password twice. Phone 08035550111.,0,55,0,8,1.0,1.0,1,1
+OCR-006,English,blur,Suspicious domain scholarship-check.example.test was shared.,Suspicious domain scholarship-check.example.test was shared.,0,60,0,5,1.0,1.0,0,0
+OCR-007,English,rotate,Contact analyst@example.test; files now end with .locked.,"Contact analyst@example.test, files now end with .locked.",1,57,1,7,0.982,0.857,1,1
+OCR-008,English,rotate,Malware hash d41d8cd98f00b204e9800998ecf8427e detected.,Malware hash d41d8cd98f00b204e9800998ecf8427e detected.,0,55,0,4,1.0,1.0,0,0
+OCR-009,English,compressed,Lost laptop reported by staff@example.test today.,Lost laptop reported by staff@example.test today.,0,49,0,6,1.0,1.0,1,1
+OCR-010,English,compressed,Admin login from 102.89.34.7 was not authorised.,Admin login from 102.89.34.7 was not authorised.,0,48,0,7,1.0,1.0,0,0
+OCR-011,Pidgin,easy,OTP wey I no request enter my phone 08031234567 twice.,OTP wey | no request enter my phone 08031234567 twice.,1,54,1,10,0.981,0.9,1,1
+OCR-012,Pidgin,easy,This link https://school-fee.example.test no look correct.,This link https://school-fee.example.test no look correct.,0,58,0,6,1.0,1.0,0,0
+OCR-013,Pidgin,easy,"Abeg email ictdesk@example.test, my files no dey open.","Abeg email ictdesk@example.test, my files no dey open.",0,54,0,8,1.0,1.0,1,1
+OCR-014,Pidgin,easy,Login from 197.210.24.18 no be me do am.,Login from 197.210.24.18 no be me do am.,0,40,0,8,1.0,1.0,0,0
+OCR-015,Pidgin,blur,Payroll dey ask for password again. Call 08035550111.,Payroll dey ask for password again. Call 08035550111.,0,53,0,8,1.0,1.0,1,1
+OCR-016,Pidgin,blur,Scholarship-check.example.test dey collect student login.,Scholarship-check.example.test dey collect student login.,0,57,0,5,1.0,1.0,0,0
+OCR-017,Pidgin,rotate,Send message to analyst@example.test; computer don lock.,Send message to analyst@example.test; computer don lock.,0,56,0,7,1.0,1.0,1,1
+OCR-018,Pidgin,rotate,I see d41d8cd98f00b204e9800998ecf8427e for alert.,lsee d41d8cd98f00b204e9800998ecf8427e for alert.,2,49,2,5,0.959,0.6,0,0
+OCR-019,Pidgin,compressed,Staff@example.test laptop loss for motor park.,Staff@example.test laptop loss for motor park.,0,46,0,6,1.0,1.0,1,1
+OCR-020,Pidgin,compressed,Na 102.89.34.7 enter admin account for midnight.,Na 102.89.34.7 enter admin account for midnight.,0,48,0,7,1.0,1.0,0,0

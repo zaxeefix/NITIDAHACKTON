@@ -1,0 +1,1 @@
+ALTER TABLE `attachments` ADD `ocr_page_count` integer;

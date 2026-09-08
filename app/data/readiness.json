@@ -1,0 +1,90 @@
+{
+  "project": "Triage247Ng — Intelligent Cyber Incident Triage and Routing Platform",
+  "track": "2026 Universities Hackathon Track D — Sorting Incident Reports Nobody Has Time to Read",
+  "generatedAt": "2026-08-24T17:30:00Z",
+  "status": "Judge-ready prototype",
+  "requirements": [
+    {
+      "requirement": "Unstructured English reports",
+      "status": "Implemented",
+      "evidence": "Text, email and file intake"
+    },
+    {
+      "requirement": "Nigerian Pidgin reports",
+      "status": "Implemented",
+      "evidence": "Pidgin-labelled training and held-out evaluation"
+    },
+    {
+      "requirement": "Incident classification",
+      "status": "Measured",
+      "evidence": "93.4% held-out accuracy; macro F1 0.943; cluster leakage 0"
+    },
+    {
+      "requirement": "Severity prioritisation",
+      "status": "Measured",
+      "evidence": "87.5% accuracy; 100% critical recall on diagnostic set"
+    },
+    {
+      "requirement": "Technical indicator extraction",
+      "status": "Measured",
+      "evidence": "76.9% diagnostic F1"
+    },
+    {
+      "requirement": "Destination recommendation",
+      "status": "Measured",
+      "evidence": "87.5% diagnostic routing accuracy; human approval required"
+    },
+    {
+      "requirement": "Privacy-cleaned report",
+      "status": "Implemented",
+      "evidence": "Editable redaction with approval and audit history"
+    },
+    {
+      "requirement": "Duplicate detection",
+      "status": "Measured",
+      "evidence": "88.9% diagnostic F1"
+    },
+    {
+      "requirement": "Urgency-ordered queue",
+      "status": "Implemented",
+      "evidence": "Severity and SLA ordering with overdue escalation"
+    },
+    {
+      "requirement": "Screenshot and PDF OCR",
+      "status": "Measured",
+      "evidence": "99.6% character and 96.9% word accuracy on 20 synthetic cases"
+    },
+    {
+      "requirement": "Offline resilience",
+      "status": "Implemented",
+      "evidence": "PWA shell, IndexedDB queue, cached incidents and local analyst drafts"
+    },
+    {
+      "requirement": "Labelled answer key",
+      "status": "Implemented",
+      "evidence": "712 synthetic reports across 14 categories with downloadable labels"
+    },
+    {
+      "requirement": "Honest error analysis",
+      "status": "Implemented",
+      "evidence": "Misclassifications and five weakest OCR cases are downloadable"
+    },
+    {
+      "requirement": "Human-readable explanation",
+      "status": "Implemented",
+      "evidence": "Evidence tokens, confidence and model limitations shown"
+    },
+    {
+      "requirement": "Human-controlled routing",
+      "status": "Implemented",
+      "evidence": "Senior Analyst or Administrator approval enforced server-side"
+    }
+  ],
+  "limitations": [
+    "All published evaluation data is synthetic and does not establish production performance.",
+    "The OCR benchmark contains 20 rendered cases and excludes handwriting, severe glare and damaged documents.",
+    "A formal independent penetration test has not been completed.",
+    "External email, threat-intelligence and institutional endpoints require separately configured credentials.",
+    "Institutional deployment still requires legal, privacy, retention and incident-response approval."
+  ]
+}

@@ -1,0 +1,1091 @@
+{
+  "schemaVersion": "1.1",
+  "generatedAt": "2026-08-24T00:00:00Z",
+  "dataset": {
+    "total": 712,
+    "training": 560,
+    "test": 152,
+    "synthetic": true,
+    "seed": 2026,
+    "clusterSeparated": true,
+    "leakageCount": 0
+  },
+  "overall": {
+    "accuracy": 0.934,
+    "macroPrecision": 0.94,
+    "macroRecall": 0.951,
+    "macroF1": 0.943,
+    "perClass": {
+      "Account takeover": {
+        "precision": 0.917,
+        "recall": 0.846,
+        "f1": 0.88,
+        "support": 13
+      },
+      "Ambiguous report": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Benign or non-security enquiry": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Data exposure": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Denial of service": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Harmless technical failure": {
+        "precision": 0.917,
+        "recall": 0.647,
+        "f1": 0.759,
+        "support": 17
+      },
+      "Insider threat": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Lost or stolen device": {
+        "precision": 0.833,
+        "recall": 0.909,
+        "f1": 0.87,
+        "support": 11
+      },
+      "Malware": {
+        "precision": 0.833,
+        "recall": 0.909,
+        "f1": 0.87,
+        "support": 11
+      },
+      "Payment fraud": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Phishing": {
+        "precision": 0.833,
+        "recall": 1.0,
+        "f1": 0.909,
+        "support": 10
+      },
+      "Ransomware": {
+        "precision": 0.833,
+        "recall": 1.0,
+        "f1": 0.909,
+        "support": 10
+      },
+      "Unauthorised access": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      },
+      "Vulnerability report": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 10
+      }
+    },
+    "confusionMatrix": {
+      "Account takeover": {
+        "Account takeover": 11,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 1,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 1,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Ambiguous report": {
+        "Account takeover": 0,
+        "Ambiguous report": 10,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Benign or non-security enquiry": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 10,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Data exposure": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 10,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Denial of service": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 10,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Harmless technical failure": {
+        "Account takeover": 1,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 11,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 2,
+        "Payment fraud": 0,
+        "Phishing": 1,
+        "Ransomware": 2,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Insider threat": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 10,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Lost or stolen device": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 1,
+        "Insider threat": 0,
+        "Lost or stolen device": 10,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Malware": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 1,
+        "Malware": 10,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Payment fraud": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 10,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Phishing": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 10,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Ransomware": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 10,
+        "Unauthorised access": 0,
+        "Vulnerability report": 0
+      },
+      "Unauthorised access": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 10,
+        "Vulnerability report": 0
+      },
+      "Vulnerability report": {
+        "Account takeover": 0,
+        "Ambiguous report": 0,
+        "Benign or non-security enquiry": 0,
+        "Data exposure": 0,
+        "Denial of service": 0,
+        "Harmless technical failure": 0,
+        "Insider threat": 0,
+        "Lost or stolen device": 0,
+        "Malware": 0,
+        "Payment fraud": 0,
+        "Phishing": 0,
+        "Ransomware": 0,
+        "Unauthorised access": 0,
+        "Vulnerability report": 10
+      }
+    }
+  },
+  "byLanguage": {
+    "English": {
+      "reports": 104,
+      "accuracy": 0.962,
+      "macroPrecision": 0.964,
+      "macroRecall": 0.969,
+      "macroF1": 0.965,
+      "perClass": {
+        "Account takeover": {
+          "precision": 1.0,
+          "recall": 0.889,
+          "f1": 0.941,
+          "support": 9
+        },
+        "Ambiguous report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Benign or non-security enquiry": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Data exposure": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Denial of service": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Harmless technical failure": {
+          "precision": 1.0,
+          "recall": 0.8,
+          "f1": 0.889,
+          "support": 10
+        },
+        "Insider threat": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Lost or stolen device": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.933,
+          "support": 7
+        },
+        "Malware": {
+          "precision": 0.875,
+          "recall": 0.875,
+          "f1": 0.875,
+          "support": 8
+        },
+        "Payment fraud": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Phishing": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.933,
+          "support": 7
+        },
+        "Ransomware": {
+          "precision": 0.875,
+          "recall": 1.0,
+          "f1": 0.933,
+          "support": 7
+        },
+        "Unauthorised access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        },
+        "Vulnerability report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 7
+        }
+      },
+      "confusionMatrix": {
+        "Account takeover": {
+          "Account takeover": 8,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 1,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Ambiguous report": {
+          "Account takeover": 0,
+          "Ambiguous report": 7,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Benign or non-security enquiry": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 7,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Data exposure": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 7,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Denial of service": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 7,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Harmless technical failure": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 8,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 1,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 1,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Insider threat": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 7,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Lost or stolen device": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 7,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Malware": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 1,
+          "Malware": 7,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Payment fraud": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 7,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Phishing": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 7,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Ransomware": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 7,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Unauthorised access": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 7,
+          "Vulnerability report": 0
+        },
+        "Vulnerability report": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 7
+        }
+      }
+    },
+    "Nigerian Pidgin": {
+      "reports": 48,
+      "accuracy": 0.875,
+      "macroPrecision": 0.893,
+      "macroRecall": 0.923,
+      "macroF1": 0.901,
+      "perClass": {
+        "Account takeover": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "support": 4
+        },
+        "Ambiguous report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Benign or non-security enquiry": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Data exposure": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Denial of service": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Harmless technical failure": {
+          "precision": 0.75,
+          "recall": 0.429,
+          "f1": 0.545,
+          "support": 7
+        },
+        "Insider threat": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Lost or stolen device": {
+          "precision": 0.75,
+          "recall": 0.75,
+          "f1": 0.75,
+          "support": 4
+        },
+        "Malware": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.857,
+          "support": 3
+        },
+        "Payment fraud": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Phishing": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.857,
+          "support": 3
+        },
+        "Ransomware": {
+          "precision": 0.75,
+          "recall": 1.0,
+          "f1": 0.857,
+          "support": 3
+        },
+        "Unauthorised access": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        },
+        "Vulnerability report": {
+          "precision": 1.0,
+          "recall": 1.0,
+          "f1": 1.0,
+          "support": 3
+        }
+      },
+      "confusionMatrix": {
+        "Account takeover": {
+          "Account takeover": 3,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 1,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Ambiguous report": {
+          "Account takeover": 0,
+          "Ambiguous report": 3,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Benign or non-security enquiry": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 3,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Data exposure": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 3,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Denial of service": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 3,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Harmless technical failure": {
+          "Account takeover": 1,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 3,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 1,
+          "Payment fraud": 0,
+          "Phishing": 1,
+          "Ransomware": 1,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Insider threat": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 3,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Lost or stolen device": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 1,
+          "Insider threat": 0,
+          "Lost or stolen device": 3,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Malware": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 3,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Payment fraud": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 3,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Phishing": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 3,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Ransomware": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 3,
+          "Unauthorised access": 0,
+          "Vulnerability report": 0
+        },
+        "Unauthorised access": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 3,
+          "Vulnerability report": 0
+        },
+        "Vulnerability report": {
+          "Account takeover": 0,
+          "Ambiguous report": 0,
+          "Benign or non-security enquiry": 0,
+          "Data exposure": 0,
+          "Denial of service": 0,
+          "Harmless technical failure": 0,
+          "Insider threat": 0,
+          "Lost or stolen device": 0,
+          "Malware": 0,
+          "Payment fraud": 0,
+          "Phishing": 0,
+          "Ransomware": 0,
+          "Unauthorised access": 0,
+          "Vulnerability report": 3
+        }
+      }
+    }
+  },
+  "misclassified": [
+    {
+      "id": "HARD-002",
+      "language": "Nigerian Pidgin",
+      "expected": "Harmless technical failure",
+      "predicted": "Account takeover",
+      "text": "ICT tell us before say dem go test OTP today; the test OTP don enter as planned."
+    },
+    {
+      "id": "HARD-004",
+      "language": "Nigerian Pidgin",
+      "expected": "Lost or stolen device",
+      "predicted": "Harmless technical failure",
+      "text": "Person carry office laptop but CCTV show who take am."
+    },
+    {
+      "id": "HARD-005",
+      "language": "English",
+      "expected": "Harmless technical failure",
+      "predicted": "Malware",
+      "text": "The antivirus quarantined the harmless training file used in yesterday's exercise."
+    },
+    {
+      "id": "HARD-006",
+      "language": "Nigerian Pidgin",
+      "expected": "Harmless technical failure",
+      "predicted": "Malware",
+      "text": "Browser open another page after update but antivirus no see any problem."
+    },
+    {
+      "id": "HARD-007",
+      "language": "English",
+      "expected": "Account takeover",
+      "predicted": "Phishing",
+      "text": "A message requested credentials and later the same account showed an unauthorised login."
+    },
+    {
+      "id": "HARD-008",
+      "language": "Nigerian Pidgin",
+      "expected": "Harmless technical failure",
+      "predicted": "Ransomware",
+      "text": "File no open because disk full; no ransom message show."
+    },
+    {
+      "id": "HARD-009",
+      "language": "English",
+      "expected": "Malware",
+      "predicted": "Lost or stolen device",
+      "text": "The lost laptop was recovered, but unknown software appeared after it rejoined the network."
+    },
+    {
+      "id": "HARD-010",
+      "language": "Nigerian Pidgin",
+      "expected": "Harmless technical failure",
+      "predicted": "Phishing",
+      "text": "Email say account close but na approved awareness simulation from ICT."
+    },
+    {
+      "id": "HARD-011",
+      "language": "English",
+      "expected": "Harmless technical failure",
+      "predicted": "Ransomware",
+      "text": "Documents are encrypted by the approved backup system and can be restored normally."
+    },
+    {
+      "id": "HARD-012",
+      "language": "Nigerian Pidgin",
+      "expected": "Account takeover",
+      "predicted": "Lost or stolen device",
+      "text": "Phone loss yesterday and today strange login enter the staff email."
+    }
+  ],
+  "pipeline": {
+    "severity": {
+      "accuracy": 0.941,
+      "criticalRecall": 1.0,
+      "urgentMissed": []
+    },
+    "routing": {
+      "accuracy": 0.941
+    },
+    "indicators": {
+      "precision": 0.833,
+      "recall": 0.714,
+      "f1": 0.769,
+      "truePositive": 5,
+      "falsePositive": 1,
+      "falseNegative": 2
+    },
+    "redaction": {
+      "precision": 1.0,
+      "recall": 0.625,
+      "f1": 0.769,
+      "truePositive": 5,
+      "falsePositive": 0,
+      "falseNegative": 3,
+      "falseRedactionRate": 0.0
+    },
+    "duplicates": {
+      "precision": 0.8,
+      "recall": 1.0,
+      "f1": 0.889,
+      "truePositive": 4,
+      "falsePositive": 1,
+      "falseNegative": 0
+    },
+    "runtime": {
+      "meanMsPerReport": 0.131,
+      "p95MsPerReport": 0.167,
+      "device": "Hackathon development container",
+      "offlineCapable": true
+    }
+  },
+  "limitations": [
+    "Results are measured on synthetic reports and do not establish production performance.",
+    "Templates may make the held-out examples easier than naturally occurring reports.",
+    "Nigerian Pidgin coverage is limited and requires review with diverse Nigerian users.",
+    "Indicator, privacy and duplicate benchmarks are small diagnostic sets and must be expanded.",
+    "OCR results are reported separately using a small synthetic Tesseract benchmark."
+  ]
+}
