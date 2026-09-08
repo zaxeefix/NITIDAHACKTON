@@ -10,7 +10,9 @@ export async function ensureWorkspaceUser(user: ChatGPTUser) {
   const [existing] = await db.select().from(workspaceUsers).where(eq(workspaceUsers.email, user.email)).limit(1);
   if (existing) return existing;
   const [firstUser] = await db.select({ email: workspaceUsers.email }).from(workspaceUsers).limit(1);
-  const role: WorkspaceRole = firstUser ? "Reporter" : "Senior Analyst";
+  // Bootstrap exactly one administrator. Every later user starts with the
+  // least-privileged Reporter role and must be promoted by that administrator.
+  const role: WorkspaceRole = firstUser ? "Reporter" : "Administrator";
   await db.insert(workspaceUsers).values({ email: user.email, displayName: user.displayName, role });
   const [created] = await db.select().from(workspaceUsers).where(eq(workspaceUsers.email, user.email)).limit(1);
   return created;

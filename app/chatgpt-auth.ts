@@ -9,6 +9,7 @@ export type ChatGPTUser = {
 };
 
 const USER_EMAIL_HEADER = "oai-authenticated-user-email";
+const CLOUDFLARE_ACCESS_EMAIL_HEADER = "cf-access-authenticated-user-email";
 const USER_FULL_NAME_HEADER = "oai-authenticated-user-full-name";
 const USER_FULL_NAME_ENCODING_HEADER =
   "oai-authenticated-user-full-name-encoding";
@@ -19,7 +20,9 @@ const CALLBACK_PATH = "/callback";
 
 export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
-  const email = requestHeaders.get(USER_EMAIL_HEADER);
+  const email =
+    requestHeaders.get(USER_EMAIL_HEADER) ??
+    requestHeaders.get(CLOUDFLARE_ACCESS_EMAIL_HEADER);
   if (!email) return localDevelopmentUser();
 
   const encodedFullName = requestHeaders.get(USER_FULL_NAME_HEADER);

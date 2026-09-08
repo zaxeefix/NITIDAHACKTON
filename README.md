@@ -58,6 +58,7 @@ The deterministic dataset contains 712 synthetic reports across all 14 required 
 - [Threat model](docs/THREAT_MODEL.md)
 - [Privacy impact assessment](docs/PRIVACY_IMPACT_ASSESSMENT.md)
 - [Deployment guide](docs/DEPLOYMENT.md)
+- [Cloudflare deployment—start to finish](docs/CLOUDFLARE_DEPLOYMENT.md)
 - [Submission package](docs/HACKATHON_SUBMISSION_PACKAGE.md)
 
 ## Legacy internal names

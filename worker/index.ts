@@ -1,17 +1,9 @@
 /** Cloudflare Worker entry point for the vinext-starter template. */
-import { handleImageOptimization, DEFAULT_DEVICE_SIZES, DEFAULT_IMAGE_SIZES } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
   ASSETS: { fetch(request: Request): Promise<Response> };
   DB: unknown;
-  IMAGES: {
-    input(stream: ReadableStream): {
-      transform(options: Record<string, unknown>): {
-        output(options: { format: string; quality: number }): Promise<{ response(): Response }>;
-      };
-    };
-  };
 }
 
 interface ExecutionContext {
@@ -31,17 +23,6 @@ const worker = {
 
     if (url.pathname.startsWith("/api/") && Number(request.headers.get("content-length") || 0) > 11 * 1024 * 1024) {
       return secure(new Response(JSON.stringify({ error: "Request is too large" }), { status: 413, headers: { "content-type": "application/json" } }));
-    }
-
-    if (url.pathname === "/_vinext/image") {
-      const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
-      return secure(await handleImageOptimization(request, {
-        fetchAsset: (path) => env.ASSETS.fetch(new Request(new URL(path, request.url))),
-        transformImage: async (body, { width, format, quality }) => {
-          const result = await env.IMAGES.input(body).transform(width > 0 ? { width } : {}).output({ format, quality });
-          return result.response();
-        },
-      }, allowedWidths));
     }
 
     return secure(await handler.fetch(request, env, ctx));
