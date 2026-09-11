@@ -11,7 +11,7 @@ Overview; Incident Queue; Submit Report; confirmation; Offline Queue; Incident D
 | Route | Methods | Sensitive function |
 | --- | --- | --- |
 | `/api/incidents` | GET, POST, PATCH | Report intake, original/redacted data, classification and lifecycle changes |
-| `/api/attachments` | GET, POST, PATCH | Evidence metadata, R2 upload, OCR review |
+| `/api/attachments` | GET, POST, PATCH | Evidence metadata, Workers KV test upload, OCR review |
 | `/api/audit` | GET | Audit history |
 | `/api/routing` | GET, POST | Human routing approval and delivery creation |
 | `/api/deliveries` | GET, PATCH | Delivery status and controlled webhook retry |
@@ -44,12 +44,12 @@ Overview; Incident Queue; Submit Report; confirmation; Offline Queue; Incident D
 
 ## Other stored assets
 
-- R2: uploaded PNG, JPEG, PDF, and TXT evidence objects.
+- Workers KV: synthetic-test PNG, JPEG, PDF, and TXT evidence objects.
 - IndexedDB: offline reports, cached incident records, queued evidence, and synchronization metadata.
 - Browser local state: analyst-note drafts and service-worker application shell cache.
 - Repository model assets: `model-artifact.json`, evaluation JSON, labelled English/Pidgin reports, OCR benchmark data, Python training/evaluation scripts.
 - Generated exports: incident CSV and audit CSV.
-- Configuration/secrets: local-development flags, email intake token, webhook signing secret, optional provider URLs/tokens, D1/R2 bindings.
+- Configuration/secrets: local-development flags, email intake token, webhook signing secret, optional provider URLs/tokens, D1/KV bindings.
 
 ## Roles and baseline privilege
 
@@ -58,7 +58,6 @@ Reporter creates reports. Analyst reviews and changes incidents. Senior Analyst 
 ## External and platform dependencies
 
 - OpenAI Sites/dispatch identity headers and hosting access policy.
-- Cloudflare Worker runtime, D1, and R2.
+- Cloudflare Worker runtime, D1, and Workers KV for no-card testing.
 - Optional email intake provider, webhook destinations, OCR provider, and threat-intelligence provider.
 - npm dependencies in `package-lock.json`; Python uses standard-library training/evaluation code.
-

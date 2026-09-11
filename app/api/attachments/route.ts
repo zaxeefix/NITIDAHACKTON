@@ -220,7 +220,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Authentication required" }, { status: 401 });
   if (!mutationAllowed(request))
     return Response.json({ error: "Cross-site mutation rejected" }, { status: 403 });
-  if (!env.BUCKET)
+  if (!env.EVIDENCE)
     return Response.json(
       { error: "Evidence storage is unavailable" },
       { status: 503 },
@@ -259,8 +259,13 @@ export async function POST(request: Request) {
   if (actualType !== file.type || !allowedTypes.has(actualType))
     return Response.json({ error: "File content does not match the permitted type" }, { status: 400 });
   const digest = await sha256(bytes);
-  await env.BUCKET.put(objectKey, bytes, {
-    httpMetadata: { contentType: file.type },
+  await env.EVIDENCE.put(objectKey, bytes, {
+    metadata: {
+      contentType: file.type,
+      sha256: digest,
+      incidentId,
+      uploadedBy: user.email,
+    },
   });
   const textResult =
     file.type === "text/plain"

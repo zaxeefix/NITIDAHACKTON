@@ -17,7 +17,7 @@ Authenticated reporters submit text, image, screenshot, PDF or TXT evidence. Dev
 ```text
 Browser PWA (React, IndexedDB, Tesseract.js, PDF.js)
   -> Vinext/Cloudflare-compatible API
-  -> D1 structured records + R2 evidence objects
+  -> D1 structured records + Workers KV test-evidence objects
   -> optional, disabled integrations after human approval
 
 Python standard-library training/evaluation

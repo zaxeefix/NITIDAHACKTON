@@ -20,9 +20,14 @@ const CALLBACK_PATH = "/callback";
 
 export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
+  const runtimeEnv = env as unknown as {
+    TRIAGENG_TRUST_CLOUDFLARE_ACCESS?: string;
+  };
   const email =
     requestHeaders.get(USER_EMAIL_HEADER) ??
-    requestHeaders.get(CLOUDFLARE_ACCESS_EMAIL_HEADER);
+    (runtimeEnv.TRIAGENG_TRUST_CLOUDFLARE_ACCESS === "true"
+      ? requestHeaders.get(CLOUDFLARE_ACCESS_EMAIL_HEADER)
+      : null);
   if (!email) return localDevelopmentUser();
 
   const encodedFullName = requestHeaders.get(USER_FULL_NAME_HEADER);

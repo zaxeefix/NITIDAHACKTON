@@ -1,7 +1,9 @@
 # Cloudflare deployment guide
 
-This is the supported free-hosting path for Triage247Ng. The application, API,
-D1 database and R2 evidence bucket stay in one Cloudflare account.
+This is the supported no-card testing path for Triage247Ng. The application,
+API, D1 database and Workers KV test-evidence namespace stay in one Cloudflare
+account. Use synthetic demonstration evidence only; move to R2 or another
+approved object store before handling real sensitive evidence.
 
 ## 1. Create and secure the account
 
@@ -44,17 +46,19 @@ D1 database and R2 evidence bucket stay in one Cloudflare account.
    npm.cmd run cf:whoami
    ```
 
-## 4. Activate R2
+## 4. Evidence storage for the no-card test deployment
 
-1. In the Cloudflare dashboard, select **Storage & databases > R2**.
-2. Select **Get started** and complete the R2 checkout. Cloudflare may request a
-   payment method even though the included free allowance is used first.
-3. Do not create a bucket manually unless automatic provisioning fails.
+Workers KV is included with the Workers Free plan and does not require R2
+billing activation. The first deployment provisions the `EVIDENCE` namespace
+automatically. Its free-plan limits make this configuration suitable for
+testing, not an institutional evidence repository.
 
 ## 5. Perform the first deployment
 
-The checked-in `wrangler.jsonc` asks Wrangler to provision the `DB` D1 binding
-and `BUCKET` R2 binding automatically.
+The checked-in `wrangler.jsonc` uses the `DB` D1 binding and `EVIDENCE`
+Workers KV binding. Before publishing for the first time, open **Workers &
+Pages** in the Cloudflare dashboard and complete **Workers onboarding** to
+choose the free account-wide `workers.dev` subdomain.
 
 1. Deploy once to provision the Worker and storage:
 
@@ -93,6 +97,9 @@ identity header inserted by Cloudflare Access.
 6. Set a short session duration for administrative access and save the policy.
 7. Open the Worker URL in a private browser window. Cloudflare must show its
    authentication screen before the application loads.
+8. In `wrangler.jsonc`, change `TRIAGENG_TRUST_CLOUDFLARE_ACCESS` from `false`
+   to `true`, then run `npm.cmd run deploy:cloudflare` again. Never enable this
+   setting before the Access policy is protecting production traffic.
 
 The first authenticated person to open the newly migrated database becomes the
 Administrator. Every later authenticated person is created as a Reporter. The
@@ -108,7 +115,8 @@ from **Users & Roles**.
 5. Upload a harmless sample image and confirm its attachment metadata appears.
 6. Open `/api/readiness` while signed in and confirm a successful JSON response.
 7. Review **Workers & Pages > triage247ng > Observability > Logs** for errors.
-8. Review **Storage & databases > D1** and **R2** to confirm records and objects.
+8. Review **Storage & databases > D1** and **Workers KV** to confirm records and
+   test-evidence keys.
 
 ## 8. Add more users
 
@@ -152,7 +160,7 @@ migrations must be reviewed and applied deliberately.
 - `no such table`: run `npm.cmd run db:migrate:remote` against the correct account.
 - `DB binding unavailable`: confirm `wrangler.jsonc` contains the provisioned D1
   binding named `DB`, then rebuild and redeploy.
-- `BUCKET binding unavailable`: activate R2 and confirm the bucket binding is
-  named `BUCKET`.
+- `EVIDENCE binding unavailable`: confirm the KV namespace binding is named
+  `EVIDENCE`, then rebuild and redeploy.
 - Upload or database data missing: confirm the deployed Worker uses the intended
-  D1 database and R2 bucket rather than a local Wrangler resource.
+  D1 database and Workers KV namespace rather than a local Wrangler resource.
