@@ -21,6 +21,17 @@ const worker = {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const url = new URL(request.url);
 
+    // `run_worker_first` is required so API responses receive the security
+    // headers below, but it also means the Worker must explicitly pass static
+    // client requests to the Assets binding. Without this hand-off the HTML is
+    // returned while its hydration modules resolve to the application 404.
+    if (
+      url.pathname.startsWith("/assets/") ||
+      ["/favicon.svg", "/manifest.webmanifest", "/og.png", "/sw.js"].includes(url.pathname)
+    ) {
+      return secure(await env.ASSETS.fetch(request));
+    }
+
     if (url.pathname.startsWith("/api/") && Number(request.headers.get("content-length") || 0) > 11 * 1024 * 1024) {
       return secure(new Response(JSON.stringify({ error: "Request is too large" }), { status: 413, headers: { "content-type": "application/json" } }));
     }
