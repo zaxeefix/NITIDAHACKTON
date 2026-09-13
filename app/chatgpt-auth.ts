@@ -1,6 +1,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { env } from "cloudflare:workers";
+import { readNativeSession } from "./native-auth";
 
 export type ChatGPTUser = {
   displayName: string;
@@ -20,6 +21,12 @@ const CALLBACK_PATH = "/callback";
 
 export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
   const requestHeaders = await headers();
+  const nativeSession = await readNativeSession(requestHeaders.get("cookie"));
+  if (nativeSession) return {
+    email: nativeSession.email,
+    displayName: nativeSession.displayName,
+    fullName: nativeSession.displayName,
+  };
   const runtimeEnv = env as unknown as {
     TRIAGENG_TRUST_CLOUDFLARE_ACCESS?: string;
   };

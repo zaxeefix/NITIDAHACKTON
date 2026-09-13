@@ -471,7 +471,7 @@ function Empty({ title, text }: { title: string; text: string }) {
   );
 }
 function PublicLanding() {
-  const signIn = "/signin-with-chatgpt?return_to=%2F";
+  const signIn = "/login";
   return <div className="publicSite">
     <header className="publicNav">
       <a className="brand" href="#home"><span className="brandmark">T247</span><span><b>Triage247Ng</b><small>Independent cyber incident triage</small></span></a>
@@ -504,6 +504,7 @@ export default function Home() {
   const [localDevelopment, setLocalDevelopment] = useState(false);
   const [accessState, setAccessState] = useState<"checking" | "authenticated" | "public">("checking");
   const [currentRole, setCurrentRole] = useState("Reporter");
+  const [currentUser, setCurrentUser] = useState({ displayName: "Workspace user", email: "" });
   const flash = (message: string) => {
     setToast(message);
     setTimeout(() => setToast(""), 2400);
@@ -548,8 +549,9 @@ export default function Home() {
     refreshPending();
     fetch("/api/users").then(async response => {
       if (!response.ok) return setAccessState("public");
-      const data = await response.json() as { currentRole?: string };
+      const data = await response.json() as { currentRole?: string; currentUser?: { displayName?: string; email?: string } };
       setCurrentRole(data.currentRole || "Reporter");
+      setCurrentUser({ displayName: data.currentUser?.displayName || "Workspace user", email: data.currentUser?.email || "" });
       setView("Overview");
       setAccessState("authenticated");
     }).catch(() => setAccessState("public"));
@@ -649,7 +651,7 @@ export default function Home() {
           >
             ＋ New report
           </button>
-          <button className="avatar" aria-label="Open profile for Nneka Adeyemi">NA</button>
+          <button className="avatar" aria-label={`Signed in as ${currentUser.displayName}`} title={currentUser.email}>{currentUser.displayName.split(" ").map(part => part[0]).join("").slice(0, 2).toUpperCase()}</button>
         </div>
       </header>
       <div className="body">
@@ -711,12 +713,12 @@ export default function Home() {
             <p>Triage247Ng is an independent cyber-incident triage platform. It is not affiliated with or operated by ngCERT, NCCC, NITDA, the Nigeria Police Force or any Nigerian government agency.</p>
           </div>
           <div className="user">
-            <span className="avatar">NA</span>
+            <span className="avatar">{currentUser.displayName.split(" ").map(part => part[0]).join("").slice(0, 2).toUpperCase()}</span>
             <div>
-              <b>Nneka Adeyemi</b>
+              <b>{currentUser.displayName}</b>
               <small>{currentRole}</small>
             </div>
-            <button aria-label="Open user menu">⋮</button>
+            <button aria-label="Sign out" title="Sign out" onClick={async () => { await fetch("/api/auth/logout", { method: "POST" }); window.location.assign("/"); }}>Sign out</button>
           </div>
         </aside>
         <main id="main-content" tabIndex={-1}>

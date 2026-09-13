@@ -65,6 +65,8 @@ The deterministic dataset contains 712 synthetic reports across all 14 required 
 
 Backward compatibility intentionally retains `TNG-*` incident references, `TRIAGENG_*` environment variables, the `triageng-offline` IndexedDB name, historical migration/table identifiers and some ML filenames. These are internal contracts; all public product copy is Triage247Ng.
 
+Production administrators sign in at `/login`. The Cloudflare deployment supports a card-free native administrator session using Worker secrets; see `docs/CLOUDFLARE_DEPLOYMENT.md`. Authorization remains enforced in backend API handlers and the D1 role model.
+
 ## Compliance language
 
 Triage247Ng is designed to align with selected NIST cybersecurity, incident-response, identity, privacy, secure-development and AI-risk-management guidance. Final compliance depends on deployment configuration, institutional procedures, continuous monitoring and independent assessment. This repository does not claim NIST certification, government endorsement or verified compliance with an unavailable organiser brief.

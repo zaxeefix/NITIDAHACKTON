@@ -30,6 +30,7 @@
   "vars": {
     "TRIAGENG_ENVIRONMENT": "production",
     "TRIAGENG_LOCAL_DEV": "false",
-    "TRIAGENG_TRUST_CLOUDFLARE_ACCESS": "false"
+    "TRIAGENG_TRUST_CLOUDFLARE_ACCESS": "false",
+    "TRIAGENG_ADMIN_EMAIL": "atamisaiah@gmail.com"
   }
 }

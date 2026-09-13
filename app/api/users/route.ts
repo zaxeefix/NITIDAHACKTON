@@ -9,9 +9,9 @@ export async function GET() {
   const user = await getChatGPTUser();
   if (!user) return Response.json({ error: "Authentication required" }, { status: 401 });
   const current = await ensureWorkspaceUser(user);
-  if (!await authorize(user, "role:manage")) return Response.json({ users: [{ email: current.email, displayName: current.displayName, role: current.role, status: current.status }], currentRole: current.role });
+  if (!await authorize(user, "role:manage")) return Response.json({ users: [{ email: current.email, displayName: current.displayName, role: current.role, status: current.status }], currentRole: current.role, currentUser: { email: current.email, displayName: current.displayName } });
   const users = await getDb().select().from(workspaceUsers).orderBy(asc(workspaceUsers.displayName));
-  return Response.json({ users, currentRole: current?.role || "Reporter" });
+  return Response.json({ users, currentRole: current?.role || "Reporter", currentUser: { email: current.email, displayName: current.displayName } });
 }
 
 export async function PATCH(request: Request) {

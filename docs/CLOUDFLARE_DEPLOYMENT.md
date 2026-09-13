@@ -97,7 +97,20 @@ identity header inserted by Cloudflare Access.
 6. Set a short session duration for administrative access and save the policy.
 7. Open the Worker URL in a private browser window. Cloudflare must show its
    authentication screen before the application loads.
-8. In `wrangler.jsonc`, change `TRIAGENG_TRUST_CLOUDFLARE_ACCESS` from `false`
+8. Choose one production identity method:
+
+   - **Native card-free administrator login (current deployment):** leave `TRIAGENG_TRUST_CLOUDFLARE_ACCESS=false`, set `TRIAGENG_ADMIN_EMAIL`, and add `TRIAGENG_ADMIN_PASSWORD` and `TRIAGENG_SESSION_SECRET` with `wrangler secret put`. Never place either secret in `wrangler.jsonc`, `.dev.vars`, documentation, screenshots, or Git.
+   - **Cloudflare Access:** protect the Worker first, then change `TRIAGENG_TRUST_CLOUDFLARE_ACCESS` to `true`. Cloudflare currently requires a payment method during Zero Trust onboarding, including for the Free plan.
+
+### Card-free administrator sign-in
+
+1. Open `/login` on the deployed Worker.
+2. Enter the configured administrator email and password.
+3. Successful sign-in creates an HTTP-only, Secure, SameSite=Strict session that expires after eight hours.
+4. Use **Sign out** at the bottom of the workspace navigation when finished.
+5. Five failed attempts from one network temporarily suspend further attempts for 15 minutes.
+
+The administrator role is resolved and enforced by the backend. Interface visibility is only a usability aid and is not the authorization boundary.
    to `true`, then run `npm.cmd run deploy:cloudflare` again. Never enable this
    setting before the Access policy is protecting production traffic.
 
