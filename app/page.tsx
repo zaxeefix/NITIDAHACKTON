@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
 import evaluation from "./data/model-evaluation.json";
 import ocrEvaluation from "./data/ocr-evaluation.json";
 import readiness from "./data/readiness.json";
@@ -473,27 +472,22 @@ function Empty({ title, text }: { title: string; text: string }) {
 }
 function PublicLanding() {
   const signIn = "/login";
-  const enter = () => { window.location.assign(signIn); };
-  const previewGroups = navGroups.slice(0, 3);
-  return <div className="app publicDashboardPreview">
-    <a className="skipLink" href="#main-content">Skip to main content</a>
-    <div className="institutionStrip"><span className="stripNotice">Triage247Ng operations portal</span><span className="stripTagline">Report securely. Triage intelligently. Respond faster.</span><a href={signIn}>Authorised sign in</a></div>
-    <div className="connect online"><span>Public preview · sign in to access live records</span></div>
-    <header>
-      <Link className="brand" href="/" aria-label="Triage247Ng home"><span className="brandmark">TN</span><span><b>Triage247Ng</b><small>Cyber incident operations</small></span></Link>
-      <label className="search">⌕<input aria-label="Search preview" placeholder="Search incidents, IDs or indicators…" onFocus={enter} readOnly /><kbd>⌘ K</kbd></label>
-      <div className="headerActions"><span className="previewStatus">● Public preview</span><a className="outline compact" href={signIn}>Sign in</a><a className="primary compact" href={signIn}>＋ New report</a></div>
+  return <div className="publicSite">
+    <header className="publicNav">
+      <a className="brand" href="#home"><span className="brandmark">T247</span><span><b>Triage247Ng</b><small>Independent cyber incident triage</small></span></a>
+      <nav aria-label="Public navigation"><a href="#how">How It Works</a><a href="#resources">Cybersecurity Resources</a><a href="#faq">FAQ</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
+      <div><a className="outline" href={signIn}>Sign In</a><a className="primary compact" href={signIn}>Create Account</a></div>
     </header>
-    <div className="body">
-      <aside>
-        <div className="org"><span>TN</span><div><b>Triage247Ng Operations</b><small>Independent incident platform</small></div></div>
-        <nav aria-label="Preview navigation">
-          {previewGroups.map(group => <div className="navGroup" key={group.label}><small>{group.label}</small>{group.items.map((name, index) => <a href={signIn} key={name} className={index === 0 && group === previewGroups[0] ? "active" : ""}><Icon name={name} /><span>{name}</span>{name === "Incident Queue" && <em>3</em>}</a>)}</div>)}
-        </nav>
-        <div className="previewAccess"><b>Secure workspace</b><p>Sign in to submit reports or access institutional records.</p><a href={signIn}>Enter workspace →</a></div>
-      </aside>
-      <main id="main-content" tabIndex={-1}><Overview open={enter} go={enter} publicPreview /></main>
-    </div>
+    <main id="home" className="publicMain">
+      <section className="publicLandingHero"><div><span className="portalEyebrow">Track D · Government and Public Sector</span><h1>Report securely. Triage intelligently. Respond faster.</h1><p>Triage247Ng transforms unstructured English, Nigerian Pidgin, screenshots and files into privacy-reduced, classified, deduplicated and prioritised records for authorised human review.</p><div className="heroActions"><a className="primary" href={signIn}>Report an Incident</a><a className="outline" href="#how">See how it works</a></div><small>Formal reports require a verified signed-in account. Anonymous submission is disabled.</small></div><aside><b>Human-controlled by design</b><p>AI recommends category, severity and destination. Analysts confirm, correct or defer every consequential action.</p><span>Offline-capable · Local OCR · Explainable severity</span></aside></section>
+      <section className="independenceNotice"><b>Independent platform notice</b><span>Triage247Ng is an independent cyber-incident triage platform. It is not affiliated with or operated by ngCERT, NITDA, NCCC, the Nigeria Police Force or any Nigerian government agency.</span></section>
+      <section id="how" className="publicSection"><span className="portalEyebrow">How It Works</span><h2>From messy report to review-ready incident</h2><div className="publicCards"><article><b>1 · Submit securely</b><p>Sign in, accept the privacy terms and describe the event in English or Nigerian Pidgin.</p></article><article><b>2 · Process locally</b><p>OCR, redaction, classification, indicators, severity factors and duplicates are prepared without paid cloud AI.</p></article><article><b>3 · Human decision</b><p>Authorised analysts correct recommendations and approve any onward routing with an audit trail.</p></article></div></section>
+      <section id="resources" className="publicSection tinted"><span className="portalEyebrow">Cybersecurity Resources</span><h2>Report safely</h2><div className="publicCards"><article><b>Preserve evidence</b><p>Keep the original message or screenshot. Do not forward suspicious links or open unknown files.</p></article><article><b>Never share secrets</b><p>Do not submit passwords, PINs, one-time codes, private keys or unrelated personal records.</p></article><article><b>Urgent danger</b><p>For immediate danger to life or safety, contact the appropriate emergency service and your institutional security desk.</p></article></div></section>
+      <section id="faq" className="publicSection"><span className="portalEyebrow">Frequently Asked Questions</span><h2>What the platform does—and does not do</h2><details><summary>Does AI make the final decision?</summary><p>No. It recommends; authorised people decide.</p></details><details><summary>Can I continue without internet?</summary><p>Yes. The core workflow stores a stable local reference and synchronises safely when connectivity returns.</p></details><details><summary>Is this a government service?</summary><p>No. Triage247Ng is independent and makes no government-affiliation claim.</p></details></section>
+      <section id="about" className="publicSection tinted"><span className="portalEyebrow">About</span><h2>Built for small institutional security teams</h2><p>The platform addresses Track D: sorting incident reports nobody has time to read. It is an intake and triage layer, not an autonomous defence system or replacement for any response organisation.</p></section>
+      <section id="contact" className="publicSection"><span className="portalEyebrow">Contact</span><h2>Use your institution’s approved security contact</h2><p>Production contact details must be configured by the deploying institution. This demonstration uses synthetic data only.</p><a className="primary" href={signIn}>Create Account or Sign In</a></section>
+    </main>
+    <footer className="publicFooter"><b>Triage247Ng</b><span>Privacy notice · Reporting terms · Accessibility</span><small>Report securely. Triage intelligently. Respond faster.</small></footer>
   </div>;
 }
 export default function Home() {
@@ -818,30 +812,19 @@ function PageHead({
 function Overview({
   open,
   go,
-  publicPreview = false,
 }: {
   open: (i: Incident) => void;
   go: (s: string) => void;
-  publicPreview?: boolean;
 }) {
   const critical = incidents.filter((i) => i.severity === "Critical"),
     [live, setLive] = useState<LiveMetrics | null>(null);
   useEffect(() => {
-    if (publicPreview) return;
     fetch("/api/metrics")
       .then((r) => (r.ok ? r.json() : Promise.reject()))
       .then((d) => setLive(d.metrics))
       .catch(() => {});
-  }, [publicPreview]);
-  const metricCards = publicPreview
-    ? [
-        ["Awaiting review", "0", "0 assigned to you"],
-        ["Critical open", "0", "0 overdue"],
-        ["Reports today", "0", "Sign in for live records"],
-        ["Duplicates grouped", "0", "Similarity detection"],
-        ["Avg. triage time", "0m", "Completed incidents"],
-      ]
-    : live
+  }, []);
+  const metricCards = live
     ? [
         [
           "Awaiting review",
@@ -912,10 +895,9 @@ function Overview({
               View full queue →
             </button>
           </div>
-          {(publicPreview ? [] : critical).map((i) => (
+          {critical.map((i) => (
             <IncidentRow key={i.id} i={i} open={open} />
           ))}
-          {publicPreview && <Empty title="Live incidents are protected" text="Sign in to review the operational queue." />}
         </section>
         <section className="panel">
           <div className="panelHead">

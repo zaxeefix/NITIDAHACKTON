@@ -19,6 +19,6 @@ test("document metadata and accessibility entry point are present", async () => 
   assert.match(layout, /manifest:\s*["']\/manifest\.webmanifest["']/);
   assert.match(page, /Skip to main content/);
   assert.match(page, /aria-live=["']polite["']/);
-  assert.match(page, /Authorised sign in/);
-  assert.match(page, /Independent incident platform/);
+  assert.match(page, /Create Account/);
+  assert.match(page, /Independent platform notice/);
 });
