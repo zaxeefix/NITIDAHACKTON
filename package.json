@@ -17,6 +17,8 @@
     "cf:whoami": "wrangler whoami",
     "test": "npm run build && node --test tests/*.test.mjs",
     "lint": "eslint app db worker tests vite.config.ts next.config.ts drizzle.config.ts eslint.config.mjs",
+    "typecheck": "tsc --noEmit",
+    "verify": "npm run lint && npm run typecheck && npm test && npm run release:check",
     "db:generate": "drizzle-kit generate",
     "ml:train": "python3 ml/triageng_pipeline.py",
     "ml:ocr-evaluate": "python3 ml/ocr_benchmark.py",
@@ -26,12 +28,12 @@
     "drizzle-orm": "0.45.2",
     "next": "16.3.3",
     "pdfjs-dist": "6.2.108",
-    "react": "19.2.6",
-    "react-dom": "19.2.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "tesseract.js": "^6.0.1"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
+    "@cloudflare/vite-plugin": "^1.56.0",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
@@ -42,13 +44,16 @@
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
     "prettier": "^3.9.6",
-    "react-server-dom-webpack": "19.2.6",
+    "react-server-dom-webpack": "^19.3.0",
     "tailwindcss": "4.2.1",
     "typescript": "5.9.3",
     "vinext": "0.0.50",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
+    "vite": "^8.3.0",
+    "wrangler": "^4.135.0"
   },
   "type": "module",
-  "displayName": "Triage247Ng"
+  "displayName": "Triage247Ng",
+  "overrides": {
+    "image-size": "2.0.4"
+  }
 }

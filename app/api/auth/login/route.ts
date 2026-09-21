@@ -18,6 +18,6 @@ export async function POST(request: Request) {
     return Response.json({ error: "Email or password is incorrect" }, { status: 401 });
   }
   await clearLoginRateLimit(rate.key);
-  const cookie = await createSessionCookie(email, "Triage247Ng Administrator");
+  const cookie = await createSessionCookie(email, "Atam Isaiah");
   return Response.json({ ok: true }, { headers: { "set-cookie": cookie, "cache-control": "no-store" } });
 }

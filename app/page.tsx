@@ -17,6 +17,28 @@ import {
 } from "./lib/offline-queue";
 import { recogniseEvidence } from "./lib/local-ocr";
 type Severity = "Critical" | "High" | "Medium" | "Low" | "Informational";
+const TEAM_MEMBERS = ["Atam Isaiah", "Esther Natufe", "Ahmed Bello"] as const;
+
+function useNigeriaClock() {
+  const [now, setNow] = useState<Date | null>(null);
+  useEffect(() => {
+    const update = () => setNow(new Date());
+    update();
+    const timer = window.setInterval(update, 1_000);
+    return () => window.clearInterval(timer);
+  }, []);
+  if (!now) return { label: "LIVE NIGERIA TIME", greeting: "Welcome" };
+  const label = new Intl.DateTimeFormat("en-NG", {
+    weekday: "long", day: "2-digit", month: "long", year: "numeric",
+    hour: "2-digit", minute: "2-digit", second: "2-digit", hour12: false,
+    timeZone: "Africa/Lagos", timeZoneName: "short",
+  }).format(now).toUpperCase();
+  const hour = Number(new Intl.DateTimeFormat("en-GB", {
+    hour: "2-digit", hourCycle: "h23", timeZone: "Africa/Lagos",
+  }).format(now));
+  const greeting = hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
+  return { label, greeting };
+}
 type Incident = {
   id: string;
   title: string;
@@ -670,10 +692,10 @@ export default function Home() {
         )}
         <aside id="workspace-navigation" className={mobileOpen ? "mobileOpen" : ""}>
           <div className="org">
-            <span>AB</span>
+            <span>TN</span>
             <div>
-              <b>ABU Security Operations</b>
-              <small>Institution workspace</small>
+              <b>Triage247Ng Team</b>
+              <small title={TEAM_MEMBERS.join(", ")}>Atam · Esther · Ahmed</small>
             </div>
             <button
               className="collapseNav"
@@ -728,7 +750,7 @@ export default function Home() {
           </div>
         </aside>
         <main id="main-content" tabIndex={-1}>
-          {view === "Overview" && <Overview open={open} go={setView} />}{" "}
+          {view === "Overview" && <Overview open={open} go={setView} displayName={currentUser.displayName} />}{" "}
           {view === "Incident Queue" && <Queue open={open} />}{" "}
           {view === "Incident Detail" && selected && (
             <Detail
@@ -819,11 +841,15 @@ function Overview({
   open,
   go,
   publicPreview = false,
+  displayName = "Atam Isaiah",
 }: {
   open: (i: Incident) => void;
   go: (s: string) => void;
   publicPreview?: boolean;
+  displayName?: string;
 }) {
+  const clock = useNigeriaClock();
+  const firstName = displayName.split(" ")[0] || "Atam";
   const critical = incidents.filter((i) => i.severity === "Critical"),
     [live, setLive] = useState<LiveMetrics | null>(null);
   useEffect(() => {
@@ -867,8 +893,8 @@ function Overview({
   return (
     <div className="page">
       <PageHead
-        eyebrow="Friday, 22 August 2026"
-        title="Good evening, Nneka"
+        eyebrow={clock.label}
+        title={`${clock.greeting}, ${firstName}`}
         desc="Here is what needs your attention right now."
         action={
           <button className="primary" onClick={() => go("Submit Report")}>
@@ -960,9 +986,9 @@ function Overview({
         </div>
         <div className="workload">
           {[
-            ["NA", "Nneka Adeyemi", 4, 72],
-            ["IB", "Ibrahim Bello", 3, 55],
-            ["CO", "Chiamaka Okafor", 2, 38],
+            ["AI", TEAM_MEMBERS[0], 4, 72],
+            ["EN", TEAM_MEMBERS[1], 3, 55],
+            ["AB", TEAM_MEMBERS[2], 2, 38],
           ].map((x) => (
             <div key={String(x[1])}>
               <span className="avatar">{x[0]}</span>
@@ -3217,7 +3243,7 @@ function Audit() {
   const fallback = [
     [
       "22:48:14",
-      "Nneka Adeyemi",
+      "Atam Isaiah",
       "Changed severity",
       "TNG-2026-04872",
       "High → Critical",

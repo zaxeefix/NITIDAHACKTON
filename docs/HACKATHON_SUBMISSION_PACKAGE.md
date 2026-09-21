@@ -1,5 +1,11 @@
 # Triage247Ng Hackathon Submission Package
 
+## Team
+
+- Atam Isaiah
+- Esther Natufe
+- Ahmed Bello
+
 ## Title
 
 Triage247Ng — Intelligent Cyber Incident Triage and Routing Platform
@@ -43,7 +49,7 @@ The platform addresses the pre-submission gap before reports reach an institutio
 
 ## Architecture
 
-React and TypeScript provide the PWA interface. Cloudflare D1 stores structured records and R2 stores evidence. Python produces the trained classifier and evaluation artefacts. Tesseract.js and PDF.js perform local evidence extraction. Server routes enforce authentication, roles, audit attribution and routing approval.
+React and TypeScript provide the PWA interface. Cloudflare D1 stores structured records and Workers KV stores synthetic demonstration evidence. Python produces the trained classifier and evaluation artefacts. Tesseract.js and PDF.js perform local evidence extraction. Server routes enforce authentication, roles, audit attribution and routing approval.
 
 ## Measured results
 
@@ -68,11 +74,11 @@ React and TypeScript provide the PWA interface. Cloudflare D1 stores structured 
 
 ## Demo link
 
-Not published in this update. External deployment requires owner authorisation.
+https://triage247ng.triage247ng.workers.dev
 
 ## Repository and video
 
-- Public repository: TODO — add the public repository URL after checking for secrets.
+- Public repository: https://github.com/zaxeefix/NITIDAHACKTON
 - Demo video: TODO — record and add the final video URL.
 
 ## Screenshot shot list
@@ -93,4 +99,4 @@ Not published in this update. External deployment requires owner authorisation.
 
 ## Readiness notes
 
-The prototype is ready for a controlled hackathon demonstration. The live Site is currently access-restricted; judge access must be configured before evaluation. Nothing has been sent to Devpost, and the project does not currently have an initialised Devpost workflow state.
+The prototype is ready for a controlled hackathon demonstration. The public dashboard preview is open; live records and administration require sign-in. Nothing has been sent to Devpost, and the project does not currently have an initialised Devpost workflow state.

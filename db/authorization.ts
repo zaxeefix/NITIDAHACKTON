@@ -11,7 +11,7 @@ export async function ensureWorkspaceUser(user: ChatGPTUser) {
   const [existing] = await db.select().from(workspaceUsers).where(eq(workspaceUsers.email, user.email)).limit(1);
   const isConfiguredAdministrator = user.email.toLowerCase() === configuredAdminEmail();
   if (existing) {
-    if (isConfiguredAdministrator && (existing.role !== "Administrator" || existing.status !== "Active")) {
+    if (isConfiguredAdministrator && (existing.role !== "Administrator" || existing.status !== "Active" || existing.displayName !== user.displayName)) {
       await db.update(workspaceUsers).set({ role: "Administrator", status: "Active", displayName: user.displayName, updatedAt: new Date().toISOString() }).where(eq(workspaceUsers.email, user.email));
       const [administrator] = await db.select().from(workspaceUsers).where(eq(workspaceUsers.email, user.email)).limit(1);
       return administrator;

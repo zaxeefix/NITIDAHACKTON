@@ -4,8 +4,16 @@ import { spawnSync } from "node:child_process";
 const required = ["README.md", ".gitignore", ".env.example", "LICENSE", "render.yaml", "vercel.json", "docs/DEPLOYMENT.md"];
 for (const file of required) await access(file);
 
-const ignored = spawnSync("git", ["check-ignore", ".dev.vars", ".wrangler", "node_modules"], { encoding: "utf8" });
-if (ignored.status !== 0) throw new Error("Secret/local runtime paths are not fully ignored by Git.");
+const gitCommand = process.platform === "win32" ? "git.exe" : "git";
+const ignored = spawnSync(
+  gitCommand,
+  ["-c", `safe.directory=${process.cwd()}`, "check-ignore", ".dev.vars", ".wrangler", "node_modules"],
+  { encoding: "utf8" },
+);
+if (ignored.status !== 0) {
+  const detail = ignored.error?.message ?? ignored.stderr?.trim() ?? `exit status ${ignored.status}`;
+  throw new Error(`Secret/local runtime paths are not fully ignored by Git: ${detail}`);
+}
 
 const envExample = await readFile(".env.example", "utf8");
 if (/^(?:[A-Z0-9_]*(?:SECRET|TOKEN|API_KEY|PASSWORD)[A-Z0-9_]*)=\s*\S+/m.test(envExample)) {
